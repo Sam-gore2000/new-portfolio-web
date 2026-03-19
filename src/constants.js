@@ -69,6 +69,10 @@ import hr from './assets/work_logo/hr.png';
 import weather from './assets/work_logo/weather.png';
 import github from './assets/work_logo/github.png';
 import mbbsj from './assets/work_logo/mbbsj.png';
+import Freshmart from './assets/work_logo/freshmart.jpg';
+import foodrush from './assets/work_logo/FoodRush.jpg';
+
+
 
 
 
@@ -268,12 +272,32 @@ export const SkillsInfo = [
       description:
         "Developed a fully responsive company website using HTML, CSS, JavaScript, Bootstrap, and PHP. Delivered an interactive and modern design to ensure a seamless user experience. Integrated backend functionality to enable dynamic content management, improving site maintainability and performance.",
       image: Lion,
-      tags: ["HTML", "CSS", "Bootstrap", "PHP", "MYSQL","API"],
+      tags: ["HTML", "CSS", "Bootstrap", "PHP", "MYSQL","API","Javascript"],
       github: "#",
-      webapp: "https://new.ciochronicle.com/",
+      webapp: "https://www.lionreach.com/",
+    },
+     {
+      id: 3,
+      title: "FreshMart Vegatable Ordering E-Commerce Website",
+      description:
+        "FreshMart is a React-based vegetable ordering e-commerce web app featuring dynamic product listings, cart management, and seamless order functionality. Built using React Context API for state management and Axios for API integration, the app delivers a responsive and user-friendly shopping experience.",
+      image: Freshmart,
+      tags: ["HTML", "CSS", "Javascript", "React js","API","context API"],
+      github: "#",
+      webapp: "https://freshmart-sam.netlify.app/",
     },
       {
-      id: 3,
+      id: 4,
+      title: "FoodRush Food Ordering E-Commerce Website",
+      description:
+        "FoodRush is a React-based food ordering web application that enables users to explore menus, add items to their cart, and place orders through a smooth and responsive interface. Built using React with the Context API for state management and Axios for API integration, the app delivers a seamless and dynamic user experience with efficient data handling and modern UI design.",
+      image: foodrush,
+      tags: ["HTML", "CSS", "Javascript", "React js","API","context API"],
+      github: "#",
+      webapp: "https://foodrush-sam.netlify.app/",
+    },
+      {
+      id: 5,
       title: "Tech Blog Website",
       description:
         "Developed a technology-focused blog website using WordPress, PHP, and HTML. Created a customizable and responsive platform for publishing articles, tutorials, and tech updates. Implemented dynamic content management features allowing easy addition, editing, and organization of posts. Designed a user-friendly interface to enhance readability and engagement for visitors across devices.",
@@ -283,7 +307,7 @@ export const SkillsInfo = [
       webapp: "https://www.techpulseinsider.com/",
     },
     {
-      id: 4,
+      id: 6,
       title: "Kassa Cakes E-Commerce",
       description:
         "Developed a fully functional e-commerce website for Kassa Cakes using HTML, CSS, JavaScript, PHP, MySQL, and Wordpress. The platform allows users to browse products, add items to the cart, and place orders seamlessly. Implemented secure backend functionality for order management, inventory tracking, and customer data handling. Designed a responsive and user-friendly interface to enhance the shopping experience across devices.",
@@ -294,7 +318,7 @@ export const SkillsInfo = [
     },
   
     {
-      id: 5,
+      id: 7,
       title: "HRTech Newsroom – Blog Website",
       description:
         "Developed a technology-focused blog platform using WordPress, PHP, and HTML. Built a customizable and fully responsive website for publishing articles, tutorials, and industry updates. Implemented dynamic content management features to enable seamless addition, editing, and organization of posts",
@@ -304,7 +328,7 @@ export const SkillsInfo = [
       webapp: "https://www.hrtechnewsroom.com/",
     },
       {
-      id: 6,
+      id: 8,
       title: "Github Profile Detective",
       description:
         "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
@@ -314,7 +338,7 @@ export const SkillsInfo = [
       webapp: "https://github-detective-profile.netlify.app/",
     },
     {
-      id: 7,
+      id: 9,
       title: "Weather Forecast App",
       description:
         "Developed a responsive weather application using React and Tailwind CSS that allows users to check real-time weather conditions for any location. Integrated Weather APIs to fetch accurate data including temperature, humidity, wind speed, and forecasts. Designed a clean and user-friendly interface to provide an intuitive experience across all devices.",
@@ -323,16 +347,16 @@ export const SkillsInfo = [
       github: "#",
       webapp: "https://elegant-nasturtium-efa6eb.netlify.app/",
     },
-      {
-      id: 8,
-      title: "MBBSJ College Website",
-      description:
-        "Developed a fully responsive college website that provides detailed information about courses, faculty, events, and facilities. Integrated an online admission system allowing students to apply directly through the website, streamlining the enrollment process.",
-      image: mbbsj,
-      tags: ["HTML", "PHP", "Wordpress", "CSS"],
-      github: "#",
-      webapp: "https://mbbsjc.com/",
-    },
+    //   {
+    //   id: 10,
+    //   title: "MBBSJ College Website",
+    //   description:
+    //     "Developed a fully responsive college website that provides detailed information about courses, faculty, events, and facilities. Integrated an online admission system allowing students to apply directly through the website, streamlining the enrollment process.",
+    //   image: mbbsj,
+    //   tags: ["HTML", "PHP", "Wordpress", "CSS"],
+    //   github: "#",
+    //   webapp: "https://mbbsjc.com/",
+    // },
   
   
   ];  

@@ -45,7 +45,7 @@ const About = () => {
 
       {/* About Me Paragraph */}
       <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-        I am a Full Stack Developer with 2.5 years of experience, specializing
+        I am a Full Stack Developer with 3 years of experience, specializing
         in building modern, scalable, and user-focused web applications. With
         strong expertise in HTML, CSS, JavaScript, React.js, Tailwind CSS, PHP,
         Bootstrap, MySQL, and WordPress, I deliver high-quality solutions that
