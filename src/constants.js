@@ -71,6 +71,8 @@ import github from './assets/work_logo/github.png';
 import mbbsj from './assets/work_logo/mbbsj.png';
 import Freshmart from './assets/work_logo/freshmart.jpg';
 import foodrush from './assets/work_logo/FoodRush.jpg';
+import fitpulse from './assets/work_logo/FitPulse.png';
+
 
 
 
@@ -295,6 +297,16 @@ export const SkillsInfo = [
       tags: ["HTML", "CSS", "Javascript", "React js","API","context API"],
       github: "#",
       webapp: "https://foodrush-sam.netlify.app/",
+    },
+     {
+      id: 4,
+      title: "FitPulse  Dashboard",
+      description:
+        "FitPulse Dashboard is a modern fitness analytics web app built with React that helps users track workouts, monitor health metrics, and visualize progress through interactive charts and real-time insights. It features goal tracking, activity trends, and a responsive, user-friendly interface designed to deliver a seamless and engaging fitness monitoring experience.",
+      image: foodrush,
+      tags: ["HTML", "CSS", "Javascript", "React js","API","context API"],
+      github: "#",
+      webapp: "https://fitness-365.netlify.app/",
     },
       {
       id: 5,
