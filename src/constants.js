@@ -262,8 +262,8 @@ export const SkillsInfo = [
         "Developed an AI-powered Project Management and Employee Performance Platform that enables project assignment, real-time team collaboration, WhatsApp-like messaging, automated performance evaluation, AI-assisted employee support, and productivity tracking through a unified dashboard. The system helps organizations improve workflow efficiency, communication, and data-driven performance management.",
       image:projectflow,
       tags: [ "JavaScript", "React", "MYSQL","Node JS","Express JS","JWT Authentication","Socket.IO","OpenAI/Custom AI Agent APIs"],
-      github: "#",
-      webapp: "https://github.com/Sam-gore2000/Project-Management-Software.git",
+      github: "https://github.com/Sam-gore2000/Project-Management-Software.git",
+      webapp: "https://obsidian.int.lionreachlabs.cloud/home",
     },
     {
       id: 1,
