@@ -305,7 +305,7 @@ export const SkillsInfo = [
       description:
         "MailGuard is a full-stack SaaS email verification platform that validates single or bulk email addresses using real-time DNS, MX, and SMTP checks. It detects disposable emails, role-based accounts, and catch-all domains, provides confidence scores with detailed verification results, and includes bulk CSV processing, domain intelligence caching, authentication, job tracking, and Docker-ready deployment for scalable email validation.",
       image: MailGuard,
-      tags: ["Node.js, Express.js, MongoDB (Mongoose), Redis, BullMQ (job queues), JWT authentication, Nodemailer,React, Vite, Tailwind CSS, React Query, Framer Motion","Docker"],
+      tags: ["Node.js", "Express.js", "MongoDB (Mongoose)", "Redis", "BullMQ", "JWT authentication", "Nodemailer","React", "Vite", "Tailwind CSS", "React Query"," Framer Motion","Docker"],
       github: "https://github.com/Sam-gore2000/mailguard",
       webapp: "https://mailguard.ext.lionreachlabs.cloud/",
     },
@@ -315,7 +315,7 @@ export const SkillsInfo = [
       description:
         "A full-stack personal performance dashboard combining habit tracking, gamification, and analytics — built with React, Node.js/Express, and MongoDB. Features daily goal tracking, XP/levels, streaks, a GitHub-style consistency heatmap, a computed 'Life Score,' 30-day challenges, and a calendar with day-by-day reports.",
       image: lifeos,
-      tags: ["React js ", "Express js", "Javascript", "Node js","MongoDB","JWT authentication","Docker"],
+      tags: ["React js ", "Express js", "Javascript", "Node js","MongoDB","JWT authentication","Docker","Tailwind CSS"],
       github: "https://github.com/Sam-gore2000/lifeTrack",
       webapp: "https://life-track-mu.vercel.app/",
     },
