@@ -76,6 +76,8 @@ import fitpulse from './assets/work_logo/FitPulse.png';
 import projectflow from './assets/work_logo/projectflow.png';
 import lifeos from './assets/work_logo/lifeos.png';
 import MailGuard from './assets/work_logo/mailgaurd.png';
+import sky from './assets/work_logo/sky.png';
+
 
 
 
@@ -324,7 +326,7 @@ export const SkillsInfo = [
       title: "Sky's Pawcation",
       description:
         "Sky's Pawcation is a modern, responsive web application built with React.js that helps pet owners explore and discover premium pawcation (pet boarding and daycare) services with ease. The website provides comprehensive information about the facilities, services, and care offered, making it simple for clients to find the perfect stay for their dogs.",
-      image: Freshmart,
+      image: sky,
       tags: ["HTML", "CSS", "Javascript", "React js","API","context API"],
       github: "https://github.com/Sam-gore2000/Sky-s-Pawcation",
       webapp: "https://sky-pawcation-new.netlify.app/",
