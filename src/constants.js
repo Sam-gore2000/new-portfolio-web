@@ -77,6 +77,9 @@ import projectflow from './assets/work_logo/projectflow.png';
 import lifeos from './assets/work_logo/lifeos.png';
 import MailGuard from './assets/work_logo/mailgaurd.png';
 import sky from './assets/work_logo/sky.png';
+import campagin from './assets/work_logo/campagin-iq.png';
+import brandportal from './assets/work_logo/Brand-Portal.png';
+
 
 
 
@@ -126,6 +129,7 @@ export const SkillsInfo = [
       // { name: 'PostgreSQL', logo: postgreLogo },
     ],
   },
+  
   // {
   //   title: 'Languages',
   //   skills: [
@@ -303,6 +307,17 @@ export const SkillsInfo = [
     },
     {
       id: 4,
+      title: "CampaignIQ – Lead Allocation & Client Collaboration Platform",
+      description:
+        "CampaignIQ is a comprehensive SaaS platform developed to streamline lead delivery, campaign tracking, and client collaboration for lead generation companies. The platform provides complete visibility into campaign performance, lead allocation, acceptance status, and communication between internal teams and clients.Instead of managing campaigns through spreadsheets, emails, and multiple communication channels, CampaignIQ centralizes the entire workflow into a single dashboard where Sales Teams, Client Success Managers, Operations Teams, and Clients can collaborate in real time.",
+      image: campagin,
+      tags: ["Node.js", "Express.js", "MongoDB (Mongoose)", "BullMQ", "JWT authentication", "Nodemailer","React", "Vite", "Tailwind CSS", "React Query"," Framer Motion","Docker","Role-Based Access Control","Email Notifications","Real-Time Chat"],
+      github: "#",
+      webapp: "https://campaigniq.ext.lionreachlabs.cloud/login",
+    },
+    
+    {
+      id: 5,
       title: "MailGuard — Email Verification SaaS",
       description:
         "MailGuard is a full-stack SaaS email verification platform that validates single or bulk email addresses using real-time DNS, MX, and SMTP checks. It detects disposable emails, role-based accounts, and catch-all domains, provides confidence scores with detailed verification results, and includes bulk CSV processing, domain intelligence caching, authentication, job tracking, and Docker-ready deployment for scalable email validation.",
@@ -312,7 +327,7 @@ export const SkillsInfo = [
       webapp: "https://mailguard.ext.lionreachlabs.cloud/",
     },
     {
-      id: 5,
+      id: 6,
       title: "LifeOS: Full-Stack Habit & Goal Tracking Platform",
       description:
         "A full-stack personal performance dashboard combining habit tracking, gamification, and analytics — built with React, Node.js/Express, and MongoDB. Features daily goal tracking, XP/levels, streaks, a GitHub-style consistency heatmap, a computed 'Life Score,' 30-day challenges, and a calendar with day-by-day reports.",
@@ -322,7 +337,7 @@ export const SkillsInfo = [
       webapp: "https://life-track-mu.vercel.app/",
     },
      {
-      id: 6,
+      id: 7,
       title: "Sky's Pawcation",
       description:
         "Sky's Pawcation is a modern, responsive web application built with React.js that helps pet owners explore and discover premium pawcation (pet boarding and daycare) services with ease. The website provides comprehensive information about the facilities, services, and care offered, making it simple for clients to find the perfect stay for their dogs.",
@@ -331,8 +346,18 @@ export const SkillsInfo = [
       github: "https://github.com/Sam-gore2000/Sky-s-Pawcation",
       webapp: "https://sky-pawcation-new.netlify.app/",
     },
+    {
+      id: 8,
+      title: "Brand Asset Portal",
+      description:
+        "A full-stack MERN application (React, Node.js, Express, MongoDB) that serves as a centralized digital asset management system for enterprise teams. Features JWT-based role access control across 4 user roles, file upload & versioning, in-browser previews, download analytics dashboards, and an internal asset-request workflow — all wrapped in a responsive, light/dark-mode UI.",
+      image:brandportal,
+      tags: ["Node.js", "Express.js", "MongoDB (Mongoose)",  "JWT authentication", "React", "Vite", "Tailwind CSS", "React Query"," Framer Motion","Docker","Role-Based Access Control","Email Notifications",],
+      github: "https://github.com/Sam-gore2000/brand-portal",
+      webapp: "#",
+    },
      {
-      id: 7,
+      id: 9,
       title: "FreshMart Vegatable Ordering E-Commerce Website",
       description:
         "FreshMart is a React-based vegetable ordering e-commerce web app featuring dynamic product listings, cart management, and seamless order functionality. Built using React Context API for state management and Axios for API integration, the app delivers a responsive and user-friendly shopping experience.",
@@ -342,7 +367,7 @@ export const SkillsInfo = [
       webapp: "https://freshmart-sam.netlify.app/",
     },
       {
-      id: 8,
+      id: 10,
       title: "FoodRush Food Ordering E-Commerce Website",
       description:
         "FoodRush is a React-based food ordering web application that enables users to explore menus, add items to their cart, and place orders through a smooth and responsive interface. Built using React with the Context API for state management and Axios for API integration, the app delivers a seamless and dynamic user experience with efficient data handling and modern UI design.",
@@ -352,7 +377,7 @@ export const SkillsInfo = [
       webapp: "https://foodrush-sam.netlify.app/",
     },
      {
-      id: 9,
+      id: 11,
       title: "FitPulse  Dashboard",
       description:
         "FitPulse Dashboard is a modern fitness analytics web app built with React that helps users track workouts, monitor health metrics, and visualize progress through interactive charts and real-time insights. It features goal tracking, activity trends, and a responsive, user-friendly interface designed to deliver a seamless and engaging fitness monitoring experience.",
@@ -362,7 +387,7 @@ export const SkillsInfo = [
       webapp: "https://fitness-365.netlify.app/",
     },
       {
-      id: 10,
+      id: 12,
       title: "Tech Blog Website",
       description:
         "Developed a technology-focused blog website using WordPress, PHP, and HTML. Created a customizable and responsive platform for publishing articles, tutorials, and tech updates. Implemented dynamic content management features allowing easy addition, editing, and organization of posts. Designed a user-friendly interface to enhance readability and engagement for visitors across devices.",
@@ -372,7 +397,7 @@ export const SkillsInfo = [
       webapp: "https://www.techpulseinsider.com/",
     },
     {
-      id: 11,
+      id: 13,
       title: "Kassa Cakes E-Commerce",
       description:
         "Developed a fully functional e-commerce website for Kassa Cakes using HTML, CSS, JavaScript, PHP, MySQL, and Wordpress. The platform allows users to browse products, add items to the cart, and place orders seamlessly. Implemented secure backend functionality for order management, inventory tracking, and customer data handling. Designed a responsive and user-friendly interface to enhance the shopping experience across devices.",
@@ -383,7 +408,7 @@ export const SkillsInfo = [
     },
   
     {
-      id: 12,
+      id: 14,
       title: "HRTech Newsroom – Blog Website",
       description:
         "Developed a technology-focused blog platform using WordPress, PHP, and HTML. Built a customizable and fully responsive website for publishing articles, tutorials, and industry updates. Implemented dynamic content management features to enable seamless addition, editing, and organization of posts",
@@ -393,7 +418,7 @@ export const SkillsInfo = [
       webapp: "https://www.hrtechnewsroom.com/",
     },
       {
-      id: 13,
+      id: 15,
       title: "Github Profile Detective",
       description:
         "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
@@ -403,7 +428,7 @@ export const SkillsInfo = [
       webapp: "https://github-detective-profile.netlify.app/",
     },
     {
-      id: 14,
+      id: 16,
       title: "Weather Forecast App",
       description:
         "Developed a responsive weather application using React and Tailwind CSS that allows users to check real-time weather conditions for any location. Integrated Weather APIs to fetch accurate data including temperature, humidity, wind speed, and forecasts. Designed a clean and user-friendly interface to provide an intuitive experience across all devices.",
