@@ -12,7 +12,7 @@ import profileImage from "../../assets/sam-img.webp";
 import profile from "../../assets/profile.png";
 
 
-const RESUME = "https://drive.google.com/file/d/1pmPgcAB7OlFVHREF6kza4Xcyt4VUjNvA/view?usp=sharing";
+const RESUME = "https://drive.google.com/file/d/16T6EhixffmDncD4VxfyGz3FG5NSmcZfd/view?usp=drive_link";
 const GITHUB = "https://github.com/Sam-gore2000/";
 const LINKEDIN = "https://www.linkedin.com/in/samadhan-gore-542ba4208/";
 
