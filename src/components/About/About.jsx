@@ -1,93 +1,207 @@
-import React from 'react';
-import ReactTypingEffect from 'react-typing-effect';
-import Tilt from 'react-parallax-tilt';
-import profileImage from '../../assets/sam-img.png';
+import React from "react";
+import { motion } from "motion/react";
+import ReactTypingEffect from "react-typing-effect";
+import Tilt from "react-parallax-tilt";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import CodeBackground from "../Hero/CodeBackground";
+import Magnetic from "../ui/Magnetic";
+import Counter from "../ui/Counter";
+import { scrollToId } from "../../lib/scroll";
+import { projects, experiences } from "../../constants";
+import profileImage from "../../assets/sam-img.webp";
+import profile from "../../assets/profile.png";
+
+
+const RESUME = "https://drive.google.com/file/d/1pmPgcAB7OlFVHREF6kza4Xcyt4VUjNvA/view?usp=sharing";
+const GITHUB = "https://github.com/Sam-gore2000/";
+const LINKEDIN = "https://www.linkedin.com/in/samadhan-gore-542ba4208/";
+
+// Letters of the name rise one by one - the single orchestrated moment on load.
+const Letters = ({ text, delay = 0 }) => (
+  <span className="inline-block overflow-hidden align-bottom">
+    {text.split("").map((ch, i) => (
+      <motion.span
+        key={i}
+        className="inline-block"
+        initial={{ y: "115%", rotate: 8 }}
+        animate={{ y: 0, rotate: 0 }}
+        transition={{ delay: delay + i * 0.045, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {ch === " " ? "\u00A0" : ch}
+      </motion.span>
+    ))}
+  </span>
+);
+
+const stats = [
+  { to: 3, suffix: "+", label: "Years of experience" },
+  { to: projects.length, suffix: "", label: "Projects shipped" },
+  { to: experiences.length, suffix: "", label: "Roles held" },
+];
+
+const chips = [
+  { t: "React JS", c: "text-cyan", pos: "-left-4 top-10 sm:-left-10", d: 0 },
+  { t: "Node JS", c: "text-pink", pos: "-right-2 top-24 sm:-right-8", d: 1.2 },
+  { t: "MongoDB", c: "text-violet-soft", pos: "-left-2 bottom-24 sm:-left-12", d: 2.1 },
+  { t: "ASP .NET CORE", c: "text-cyan", pos: "-right-2 bottom-10 sm:-right-6", d: 0.6 },
+];
 
 const About = () => {
   return (
-<section
-  id="about"
-  className="w-full py-4 font-sans mt-16 md:mt-24 lg:mt-32"
->
-  <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center px-4 md:px-8 lg:px-16">
-    {/* Left Side */}
-    <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-      {/* Greeting */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
-        Hi, I am
-      </h1>
+    <section id="about" className="relative flex min-h-screen items-center overflow-hidden">
+      {/* Developer-themed animated background: code rain + drifting snippets */}
+      <CodeBackground />
+      <div className="absolute inset-0 bg-gradient-to-r from-void via-void/70 to-transparent md:via-void/40" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-void to-transparent" aria-hidden="true" />
 
-      {/* Name */}
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-        Samadhan Gore
-      </h2>
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-32 md:grid-cols-[1.1fr_0.9fr] md:px-10">
+        {/* Left */}
+        <div className="text-center md:text-left">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.6, duration: 0.7 }}
+            className="mb-6 inline-flex items-center gap-3 rounded-full glass px-4 py-2 text-sm text-mist"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inset-0 rounded-full bg-cyan animate-pulseRing" />
+              <span className="relative h-2.5 w-2.5 rounded-full bg-cyan" />
+            </span>
+            Open to Fullstack roles
+          </motion.p>
 
-      {/* Skills Heading with Typing Effect */}
-      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
-        <span className="text-white">I am a </span>
-        <ReactTypingEffect
-          text={[
-            "Fullstack Developer",
-            "Front End Developer",
-            "React Js Developer",
-            "Web Developer",
-            "Coder",
-          ]}
-          speed={100}
-          eraseSpeed={50}
-          typingDelay={500}
-          eraseDelay={2000}
-          cursorRenderer={(cursor) => (
-            <span className="text-[#8245ec]">{cursor}</span>
-          )}
-        />
-      </h3>
+          <h1 className="font-display text-[2.6rem] font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+            <span className="block text-2xl font-medium text-mist sm:text-3xl"><Letters text="Hi, I am" delay={2.2} /></span>
+            <span className="block"><Letters text="Samadhan" delay={2.35} /></span>
+            <span className="block text-gradient"><Letters text="Gore" delay={2.75} /></span>
+          </h1>
 
-      {/* About Me Paragraph */}
-      <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-        I am a Full Stack Developer with 3 years of experience, specializing
-        in building modern, scalable, and user-focused web applications. With
-        strong expertise in HTML, CSS, JavaScript, React.js, Tailwind CSS, PHP,
-        Bootstrap, MySQL, and WordPress, I deliver high-quality solutions that
-        are responsive, cross-browser compatible, and performance-driven.
-      </p>
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.2 }}
+            className="mt-6 min-h-[2.2rem] font-display text-lg font-medium text-white sm:text-2xl"
+          >
+            I am a{" "}
+            <span className="text-cyan">
+              <ReactTypingEffect
+                text={["Fullstack Developer", "Front End Developer", "React Js Developer", "Web Developer", "Coder"]}
+                speed={100}
+                eraseSpeed={50}
+                typingDelay={500}
+                eraseDelay={2000}
+                cursorRenderer={(cursor) => <span className="text-pink">{cursor}</span>}
+              />
+            </span>
+          </motion.h3>
 
-      {/* Resume Button */}
-      <a
-        href="https://drive.google.com/file/d/1pmPgcAB7OlFVHREF6kza4Xcyt4VUjNvA/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
-        style={{
-          background: "linear-gradient(90deg, #8245ec, #a855f7)",
-          boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
-        }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.1, duration: 0.8 }}
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-mist md:mx-0 sm:text-lg"
+          >
+            I am a Full Stack Developer with 3 years of experience, specializing in building modern, scalable, and
+            user-focused web applications. With strong expertise in HTML, CSS, JavaScript, React.js, Tailwind CSS, PHP,
+            Bootstrap, MySQL, and WordPress, I deliver high-quality solutions that are responsive, cross-browser
+            compatible, and performance-driven.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.3, duration: 0.8 }}
+            className="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+          >
+            <Magnetic>
+              <a
+                href={RESUME}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block overflow-hidden rounded-full bg-gradient-to-r from-violet to-pink px-8 py-4 font-semibold text-white shadow-[0_0_40px_rgba(123,92,255,0.6)]"
+              >
+                <span className="relative z-10">Download CV</span>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 hover:translate-x-full" />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <button
+                onClick={() => scrollToId("work")}
+                className="rounded-full glass px-8 py-4 font-semibold text-white transition hover:bg-white/10"
+              >
+                See my projects
+              </button>
+            </Magnetic>
+            <div className="flex gap-3 text-xl text-mist">
+              <a href={GITHUB} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid h-12 w-12 place-items-center rounded-full glass transition hover:text-cyan"><FaGithub /></a>
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-12 w-12 place-items-center rounded-full glass transition hover:text-cyan"><FaLinkedin /></a>
+            </div>
+          </motion.div>
+
+          <motion.dl
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.6, duration: 0.8 }}
+            className="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8"
+          >
+            {stats.map((s) => (
+              <div key={s.label}>
+                <dt className="font-display text-3xl font-bold text-white sm:text-4xl">
+                  <Counter to={s.to} suffix={s.suffix} />
+                </dt>
+                <dd className="mt-1 text-xs text-mist sm:text-sm">{s.label}</dd>
+              </div>
+            ))}
+          </motion.dl>
+        </div>
+
+        {/* Right: portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85, rotateY: -20 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ delay: 2.5, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[22rem] sm:max-w-sm"
+        >
+          <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-violet via-cyan to-pink opacity-40 blur-3xl animate-spinSlow" />
+          <Tilt tiltMaxAngleX={12} tiltMaxAngleY={12} perspective={1000} scale={1.03} glareEnable glareMaxOpacity={0.25} glareColor="#2de2e6" glarePosition="all" glareBorderRadius="2rem" gyroscope>
+            <div className="relative overflow-hidden rounded-[2rem] p-[2px] bg-gradient-to-br from-violet via-cyan to-pink">
+              <div className="relative overflow-hidden rounded-[calc(2rem-2px)] bg-ink">
+                <img src={profile} alt="Samadhan Gore" width="900" height="1350" className="aspect-[4/5] w-full object-cover object-top" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-void via-void/80 to-transparent p-5 pt-16">
+                  <p className="font-display text-lg font-semibold text-white">Samadhan Gore</p>
+                  <p className="text-sm text-cyan">Fullstack Developer</p>
+                </div>
+              </div>
+            </div>
+          </Tilt>
+          {chips.map((c) => (
+            <span
+              key={c.t}
+              style={{ animationDelay: `${c.d}s` }}
+              className={`absolute ${c.pos} animate-float rounded-full glass px-4 py-2 text-xs font-semibold shadow-xl sm:text-sm ${c.c}`}
+            >
+              {c.t}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4 }}
+        className="absolute bottom-6 right-10 hidden flex-col items-center gap-2 text-xs text-mist md:flex"
       >
-        DOWNLOAD CV
-      </a>
-    </div>
-
-    {/* Right Side */}
-    <div className="md:w-1/2 flex justify-center md:justify-end">
-      <Tilt
-        className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full"
-        tiltMaxAngleX={20}
-        tiltMaxAngleY={20}
-        perspective={1000}
-        scale={1.05}
-        transitionSpeed={1000}
-        gyroscope={true}
-      >
-        <img
-          src={profileImage}
-          alt="Samadhan Gore"
-          className="w-full h-full rounded-full object-contain drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)] bg-white"
-        />
-      </Tilt>
-    </div>
-  </div>
-</section>
-
+        Scroll
+        <span className="relative h-10 w-[22px] rounded-full border border-white/30">
+          <motion.span
+            className="absolute left-1/2 top-2 h-2 w-1 -translate-x-1/2 rounded-full bg-cyan"
+            animate={{ y: [0, 14, 0], opacity: [1, 0.2, 1] }}
+            transition={{ repeat: Infinity, duration: 1.6 }}
+          />
+        </span>
+      </motion.div>
+    </section>
   );
 };
 

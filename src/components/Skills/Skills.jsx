@@ -1,66 +1,82 @@
-// src/components/Skills/Skills.jsx
 import React from "react";
-import { SkillsInfo } from "../../constants";
+import { motion } from "motion/react";
 import Tilt from "react-parallax-tilt";
+import { SkillsInfo } from "../../constants";
+import SectionTitle from "../ui/SectionTitle";
+import useSpotlight from "../ui/useSpotlight";
 
-const Skills = () => (
-  <section
-    id="skills"
-    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
-  >
-    {/* Section Title */}
-    <div className="text-center mb-8">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
-      <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold">
-      A collection of my technical skills and expertise honed through various projects and experiences
-      </p>
-    </div>
+const accents = ["from-violet/30", "from-cyan/25", "from-pink/25"];
 
-    {/* Skill Categories */}
-    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
-      {SkillsInfo.map((category) => (
-        <div
-          key={category.title}
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
-          shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
-        >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
-            {category.title}
-          </h3>
+const Skills = () => {
+  const spot = useSpotlight();
+  const all = SkillsInfo.flatMap((c) => c.skills);
 
-          {/* Skill Items - 3 per row on larger screens */}
-          <Tilt
-            key={category.title}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
+  return (
+    <section id="skills" className="relative px-6 py-28 md:px-10">
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle
+          title="My Tech Skills"
+          sub="A collection of my technical skills and expertise honed through various projects and experiences"
+        />
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {SkillsInfo.map((category, ci) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} perspective={1200} scale={1.01} className="h-full">
                 <div
-                  key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center"
+                  onMouseMove={spot}
+                  className="group glass glow-border relative h-full overflow-hidden rounded-3xl p-6 sm:p-8"
                 >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                  />
-                  <span className="text-xs sm:text-sm text-gray-300">
-                    {skill.name}
-                  </span>
+                  <div className={`pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gradient-to-br ${accents[ci % 3]} to-transparent blur-3xl`} />
+                  <div className="spotlight pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative mb-6 flex items-baseline justify-between">
+                    <h3 className="font-display text-2xl font-semibold text-white">{category.title}</h3>
+                    <span className="text-sm text-mist">{category.skills.length} skills</span>
+                  </div>
+                  <ul className="relative grid grid-cols-2 gap-3">
+                    {category.skills.map((skill, i) => (
+                      <motion.li
+                        key={skill.name}
+                        initial={{ opacity: 0, scale: 0.7 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.25 + i * 0.05, type: "spring", stiffness: 260, damping: 18 }}
+                        whileHover={{ y: -4, scale: 1.05 }}
+                        className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-3 transition-colors hover:border-cyan/60 hover:bg-cyan/10"
+                      >
+                        <img src={skill.logo} alt="" style={{ animationDelay: `${(i * 0.37) % 2.4}s` }} className="h-7 w-7 animate-bob object-contain" loading="lazy" />
+                        <span className="text-sm text-white/90">{skill.name}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </Tilt>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Logo conveyor: two rows moving in opposite directions */}
+        <div className="mt-16 space-y-4 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]" aria-hidden="true">
+          {[false, true].map((rev) => (
+            <div key={String(rev)} className={`flex w-max gap-4 ${rev ? "animate-marquee-rev" : "animate-marquee"}`}>
+              {[...all, ...all].map((s, i) => (
+                <div key={i} className="flex items-center gap-3 rounded-full glass px-5 py-3">
+                  <img src={s.logo} alt="" className="h-6 w-6 object-contain" loading="lazy" />
+                  <span className="whitespace-nowrap text-sm text-white/80">{s.name}</span>
                 </div>
               ))}
             </div>
-          </Tilt>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default Skills;

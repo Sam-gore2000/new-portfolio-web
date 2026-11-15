@@ -1,93 +1,86 @@
 import React from "react";
-import { experiences } from "../../constants"; // Import your data
+import { motion } from "motion/react";
+import Tilt from "react-parallax-tilt";
+import { experiences } from "../../constants";
+import SectionTitle from "../ui/SectionTitle";
+import TimelineLine from "../ui/TimelineLine";
+import useSpotlight from "../ui/useSpotlight";
+import { tidy } from "../../lib/text";
 
 const Experience = () => {
+  const spot = useSpotlight();
   return (
-    <section
-      id="experience"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
-    >
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A collection of my work experience and the roles I have taken in
-          various organizations
-        </p>
-      </div>
+    <section id="experience" className="relative px-6 py-28 md:px-10">
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle
+          title="Work Experience"
+          sub="A collection of my work experience and the roles I have taken in various organizations"
+        />
 
-      {/* Experience Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
-
-        {/* Experience Entries */}
-        {experiences.map((experience, index) => (
-          <div
-            key={experience.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${
-              index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
-            }`}
-          >
-            {/* Timeline Circle */}
-            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <img
-                src={experience.img}
-                alt={experience.company}
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-
-            {/* Content Section */}
-            <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
-            >
-              {/* Flex container for image and text */}
-              <div className="flex items-center space-x-6">
-                {/* Company Logo/Image */}
-                <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
-                  <img
-                    src={experience.img}
-                    alt={experience.company}
-                    className="w-full h-full object-cover"
-                  />
+        <TimelineLine>
+          {experiences.map((exp, i) => {
+            const left = i % 2 === 0;
+            const current = /present/i.test(exp.date);
+            return (
+              <div key={exp.id} className={`relative mb-14 flex pl-14 md:pl-0 ${left ? "md:justify-start" : "md:justify-end"}`}>
+                {/* node on the line */}
+                <div className="absolute left-5 top-6 z-10 -translate-x-1/2 md:left-1/2">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.15 }}
+                  className="relative"
+                >
+                  <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full border-2 border-cyan bg-white shadow-[0_0_26px_rgba(45,226,230,0.65)]">
+                    <img src={exp.img} alt={exp.company} className="h-full w-full object-cover" />
+                  </span>
+                  {current && <span className="absolute inset-0 rounded-full border border-cyan animate-pulseRing" />}
+                </motion.div>
                 </div>
 
-                {/* Role, Company Name, and Date */}
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                      {experience.role}
-                    </h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">
-                      {experience.company}
-                    </h4>
+                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1200} scale={1.015} className={`w-full md:w-[calc(50%-3.5rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}>
+                <motion.article
+                  initial={{ opacity: 0, x: left ? -80 : 80, rotateY: left ? 12 : -12 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  onMouseMove={spot}
+                  style={{ transformPerspective: 1000 }}
+                  className="glass glow-border h-full w-full rounded-3xl p-6 sm:p-8"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">{exp.role}</h3>
+                      <p className="mt-1 text-cyan">{exp.company}</p>
+                    </div>
+                    {current && (
+                      <span className="shrink-0 rounded-full bg-cyan/15 px-3 py-1 text-xs font-semibold text-cyan">Current</span>
+                    )}
                   </div>
-                  {/* Date at the bottom */}
-                  <p className="text-sm text-gray-500 mt-2">{experience.date}</p>
-                </div>
-              </div>
+                  <p className="mt-2 text-sm text-mist">{exp.date}</p>
+                  <p className="mt-5 text-sm leading-relaxed text-white/75 sm:text-base">{tidy(exp.desc)}</p>
 
-              <p className="mt-4 text-gray-400">{experience.desc}</p>
-              <div className="mt-4">
-                <h5 className="font-medium text-white">Skills:</h5>
-                <ul className="flex flex-wrap mt-2">
-                  {experience.skills.map((skill, index) => (
-                    <li
-                      key={index}
-                      className="bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {exp.skills.map((s, k) => (
+                      <motion.li
+                        key={k}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 + k * 0.04 }}
+                        className="rounded-full border border-violet/40 bg-violet/15 px-3 py-1 text-xs text-white/90"
+                      >
+                        {s.trim()}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.article>
+                </Tilt>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </TimelineLine>
       </div>
     </section>
   );

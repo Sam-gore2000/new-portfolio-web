@@ -1,70 +1,60 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import { motion } from "motion/react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FiArrowUp } from "react-icons/fi";
+import { scrollToId, scrollToTop } from "../../lib/scroll";
 
-const Footer = () => {
-  // Smooth scroll function
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const links = [
+  { name: "About", id: "about" },
+  { name: "Skills", id: "skills" },
+  { name: "Experience", id: "experience" },
+  { name: "Projects", id: "work" },
+  { name: "Education", id: "education" },
+  { name: "Contact", id: "contact" },
+];
 
-  return (
-    <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
-      <div className="container mx-auto text-center">
-        {/* Name / Logo */}
-        <h2 className="text-xl font-semibold text-purple-500">Samadhan Gore</h2>
-        <h3>Phone:<b>7768969620</b> </h3>
+const Footer = () => (
+  <footer className="relative overflow-hidden border-t border-white/10 px-6 pb-8 pt-20 md:px-10">
+    <p
+      className="flex select-none justify-center whitespace-nowrap font-display text-[9.5vw] font-bold leading-none sm:text-[8.5vw]"
+      aria-label="Samadhan"
+    >
+      {"SAMADHAN".split("").map((ch, i) => (
+        <motion.span
+          key={i}
+          aria-hidden="true"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.8, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block"
+        >
+          <span className="ghost-letter text-ghost" data-cursor>{ch}</span>
+        </motion.span>
+      ))}
+    </p>
 
-        {/* Navigation Links - Responsive */}
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
-          {[
-            { name: "About", id: "about" },
-            { name: "Skills", id: "skills" },
-            { name: "Experience", id: "experience" },
-            { name: "Projects", id: "projects" },
-            { name: "Education", id: "education" },
-          ].map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleScroll(item.id)}
-              className="hover:text-purple-500 text-sm sm:text-base my-1"
-            >
-              {item.name}
-            </button>
-          ))}
-        </nav>
+    <div className="relative mx-auto mt-10 flex max-w-6xl flex-col items-center gap-6 text-center">
+      <h2 className="font-display text-xl font-semibold text-white">Samadhan Gore</h2>
+      <p className="text-mist">Phone: <a href="tel:+917768969620" className="font-semibold text-white hover:text-cyan">7768969620</a></p>
 
-        {/* Social Media Icons - Responsive */}
-        <div className="flex flex-wrap justify-center space-x-4 mt-6">
-          {[
-            // { icon: <FaFacebook />, link: "https://www.facebook.com/tarun.kaushik.3511041/" },
-            // { icon: <FaTwitter />, link: "https://twitter.com/CodingMaster6?s=09" },
-            // { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/tarun-kaushik-553b441a4" },
-            // { icon: <FaInstagram />, link: "https://www.instagram.com/coding_.master/" },
-            // { icon: <FaYoutube />, link: "https://www.youtube.com/codingmasteryt" },
-            
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl hover:text-purple-500 transition-transform transform hover:scale-110"
-            >
-              {item.icon}
-            </a>
-          ))}
-        </div>
+      <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        {links.map((l) => (
+          <button key={l.id} onClick={() => scrollToId(l.id)} className="text-sm text-mist transition hover:text-cyan">
+            {l.name}
+          </button>
+        ))}
+      </nav>
 
-        {/* Copyright Text */}
-        <p className="text-sm text-gray-400 mt-6">
-          © 2025 Samadhan Gore. All rights reserved.
-        </p>
+      <div className="flex gap-4 text-xl text-mist">
+        <a href="https://github.com/Sam-gore2000/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid h-12 w-12 place-items-center rounded-full glass transition hover:text-cyan"><FaGithub /></a>
+        <a href="https://www.linkedin.com/in/samadhan-gore-542ba4208/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-12 w-12 place-items-center rounded-full glass transition hover:text-cyan"><FaLinkedin /></a>
+        <button onClick={scrollToTop} aria-label="Back to top" className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-violet to-pink text-white shadow-[0_0_24px_rgba(123,92,255,0.6)] transition hover:-translate-y-1"><FiArrowUp /></button>
       </div>
-    </footer>
-  );
-};
+
+      <p className="text-sm text-mist/70">© {new Date().getFullYear()} Samadhan Gore. All rights reserved.</p>
+    </div>
+  </footer>
+);
 
 export default Footer;

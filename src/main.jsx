@@ -1,3 +1,5 @@
+import '@fontsource-variable/unbounded'
+import '@fontsource-variable/dm-sans'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'

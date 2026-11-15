@@ -36,6 +36,14 @@ import php from './assets/tech_logo/php-logo.png';
 import sublime from './assets/tech_logo/sublime.png';
 import wordpress from './assets/tech_logo/wordpress.png';
 import cpanel from './assets/tech_logo/cpanel.png';
+import csharp from './assets/tech_logo/Csharp_Logo.png';
+import dotnet from './assets/tech_logo/dotnet-logo.png';
+import dotnetlogo from './assets/tech_logo/NET_Core_Logo.jpg';
+import vps from './assets/tech_logo/vps.jpg';
+
+
+
+
 
 
 
@@ -54,6 +62,8 @@ import lion from './assets/company_logo/lion.png';
 import college from './assets/education_logo/college.png';
 import degree from './assets/education_logo/degree.png';
 import diploma from './assets/education_logo/diploma.png';
+import MCA from './assets/education_logo/dy-patil.jpg';
+
 
 
 
@@ -79,6 +89,12 @@ import MailGuard from './assets/work_logo/mailgaurd.png';
 import sky from './assets/work_logo/sky.png';
 import campagin from './assets/work_logo/campagin-iq.png';
 import brandportal from './assets/work_logo/Brand-Portal.png';
+import lionreach from './assets/work_logo/Lion-Reach-Media.png';
+import cio from './assets/work_logo/cio.png';
+import revtech from './assets/work_logo/revtech.png';
+
+
+
 
 
 
@@ -126,6 +142,8 @@ export const SkillsInfo = [
       { name: 'Php', logo: php },
        { name: 'Node JS', logo: nodejsLogo },
       { name: 'MongoDB', logo: mongodbLogo },
+       { name: 'C#', logo: csharpLogo },
+       { name: '.NET', logo: dotnetlogo },
       // { name: 'PostgreSQL', logo: postgreLogo },
     ],
   },
@@ -157,6 +175,10 @@ export const SkillsInfo = [
       // { name: 'Vercel', logo: vercelLogo },
       { name: 'Netlify', logo: netlifyLogo },
       { name: 'Figma', logo: figmaLogo },
+      { name: 'VPS', logo: vps },
+
+
+      
      
 
 
@@ -226,8 +248,17 @@ export const SkillsInfo = [
   ];
   
   export const education = [
-    {
+     {
       id: 0,
+      img: MCA,
+      school: " DR.D.Y Patil Vidyapeeth Pune",
+      date: "June 2026 - Present",
+      grade: "7.65 CGPA",
+      desc: "I am currently pursuing a Master of Computer Applications (MCA) from Dr. D. Y. Patil Vidyapeeth, Pune. Through this program, I am developing a strong foundation in computer applications, software development, programming, database management, and modern technologies. The course is enhancing my technical knowledge, analytical thinking, and problem-solving abilities while strengthening my understanding of real-world software development and application design.",
+      degree: "Master of Computer Applications (MCA)",
+    },
+    {
+      id: 1,
       img: degree,
       school: "Dr.Babasaheb Ambedkar Technological University",
       date: "Sept 2021 - July 2023",
@@ -236,7 +267,7 @@ export const SkillsInfo = [
       degree: "Bachelor of pharmacy (B.Pharmacy)",
     },
     {
-      id: 1,
+      id: 2,
       img: diploma,
       school: "Parikrama College Of Pharmacy",
       date: "Sept 2018 - Aug 2021",
@@ -245,7 +276,7 @@ export const SkillsInfo = [
       degree: "Diploma In Pharmacy -(D.Pharmay)",
     },
     {
-      id: 2,
+      id: 3,
       img: college,
       school: "Janta Science and Art College Ruichhattishi ,Ahilaynagar",
       date: "Apr 2017 - March 2018",
@@ -254,7 +285,7 @@ export const SkillsInfo = [
       degree: "12th (XII) - PCMB with Computer Science",
     },
     {
-      id: 3,
+      id: 4,
       img: college,
       school: "Janta Vidhaylaya Ruichhattishi,Ahilaynagar",
       date: "June 2015 - March 2016",
@@ -328,6 +359,37 @@ export const SkillsInfo = [
     },
     {
       id: 6,
+      title: "Lionreach Company Website | MERN Stack",
+      description:
+        "Developed a modern, fully responsive company website using the MERN stack (MongoDB, Express.js, React.js, and Node.js), featuring smooth animations, interactive UI elements, and engaging transitions to deliver an attractive and seamless user experience.",
+      image: lionreach,
+      tags: ["React js ", "Express js", "Javascript", "Node js","MongoDB","JWT authentication","Docker","Tailwind CSS"],
+      github: "#",
+      webapp: "https://lionreachlabs.cloud/",
+    },
+ {
+      id: 7,
+      title: "CIO Chronicle",
+      description:
+        "Developed a dynamic and visually engaging publishing website, CIO Chronicle, using the MERN stack (MongoDB, Express.js, React.js, and Node.js). Implemented rich animations, interactive UI elements, and smooth transitions to create an immersive browsing experience. Focused on responsive design, modern layouts, and seamless navigation to enhance user engagement and content accessibility.",
+      image: cio,
+      tags: ["React js ", "Express js", "Javascript", "Node js","MongoDB","JWT authentication","Docker","Tailwind CSS"],
+      github: "#",
+      webapp: "https://int.ciochronicle.lionreachlabs.cloud/",
+    },
+     {
+      id: 8,
+      title: "Revtech",
+      description:
+        "Developed a modern and visually engaging publishing website, RevTech, using the MERN stack (MongoDB, Express.js, React.js, and Node.js). Implemented advanced animations, interactive UI elements, and smooth transitions to deliver an engaging browsing experience. Focused on responsive design, intuitive navigation, and modern layouts to enhance user interaction and content accessibility.",
+      image: revtech,
+      tags: ["React js ", "Express js", "Javascript", "Node js","MongoDB","JWT authentication","Docker","Tailwind CSS"],
+      github: "#",
+      webapp: "https://int.revtech.lionreachlabs.cloud/",
+    },
+
+    {
+      id: 9,
       title: "LifeOS: Full-Stack Habit & Goal Tracking Platform",
       description:
         "A full-stack personal performance dashboard combining habit tracking, gamification, and analytics — built with React, Node.js/Express, and MongoDB. Features daily goal tracking, XP/levels, streaks, a GitHub-style consistency heatmap, a computed 'Life Score,' 30-day challenges, and a calendar with day-by-day reports.",
@@ -337,7 +399,7 @@ export const SkillsInfo = [
       webapp: "https://life-track-mu.vercel.app/",
     },
      {
-      id: 7,
+      id: 10,
       title: "Sky's Pawcation",
       description:
         "Sky's Pawcation is a modern, responsive web application built with React.js that helps pet owners explore and discover premium pawcation (pet boarding and daycare) services with ease. The website provides comprehensive information about the facilities, services, and care offered, making it simple for clients to find the perfect stay for their dogs.",
@@ -347,7 +409,7 @@ export const SkillsInfo = [
       webapp: "https://sky-pawcation-new.netlify.app/",
     },
     {
-      id: 8,
+      id: 11,
       title: "Brand Asset Portal",
       description:
         "A full-stack MERN application (React, Node.js, Express, MongoDB) that serves as a centralized digital asset management system for enterprise teams. Features JWT-based role access control across 4 user roles, file upload & versioning, in-browser previews, download analytics dashboards, and an internal asset-request workflow — all wrapped in a responsive, light/dark-mode UI.",
@@ -357,7 +419,7 @@ export const SkillsInfo = [
       webapp: "#",
     },
      {
-      id: 9,
+      id: 12,
       title: "FreshMart Vegatable Ordering E-Commerce Website",
       description:
         "FreshMart is a React-based vegetable ordering e-commerce web app featuring dynamic product listings, cart management, and seamless order functionality. Built using React Context API for state management and Axios for API integration, the app delivers a responsive and user-friendly shopping experience.",
@@ -367,7 +429,7 @@ export const SkillsInfo = [
       webapp: "https://freshmart-sam.netlify.app/",
     },
       {
-      id: 10,
+      id: 13,
       title: "FoodRush Food Ordering E-Commerce Website",
       description:
         "FoodRush is a React-based food ordering web application that enables users to explore menus, add items to their cart, and place orders through a smooth and responsive interface. Built using React with the Context API for state management and Axios for API integration, the app delivers a seamless and dynamic user experience with efficient data handling and modern UI design.",
@@ -377,7 +439,7 @@ export const SkillsInfo = [
       webapp: "https://foodrush-sam.netlify.app/",
     },
      {
-      id: 11,
+      id: 14,
       title: "FitPulse  Dashboard",
       description:
         "FitPulse Dashboard is a modern fitness analytics web app built with React that helps users track workouts, monitor health metrics, and visualize progress through interactive charts and real-time insights. It features goal tracking, activity trends, and a responsive, user-friendly interface designed to deliver a seamless and engaging fitness monitoring experience.",
@@ -387,7 +449,7 @@ export const SkillsInfo = [
       webapp: "https://fitness-365.netlify.app/",
     },
       {
-      id: 12,
+      id: 15,
       title: "Tech Blog Website",
       description:
         "Developed a technology-focused blog website using WordPress, PHP, and HTML. Created a customizable and responsive platform for publishing articles, tutorials, and tech updates. Implemented dynamic content management features allowing easy addition, editing, and organization of posts. Designed a user-friendly interface to enhance readability and engagement for visitors across devices.",
@@ -396,19 +458,10 @@ export const SkillsInfo = [
       github: "#",
       webapp: "https://www.techpulseinsider.com/",
     },
-    {
-      id: 13,
-      title: "Kassa Cakes E-Commerce",
-      description:
-        "Developed a fully functional e-commerce website for Kassa Cakes using HTML, CSS, JavaScript, PHP, MySQL, and Wordpress. The platform allows users to browse products, add items to the cart, and place orders seamlessly. Implemented secure backend functionality for order management, inventory tracking, and customer data handling. Designed a responsive and user-friendly interface to enhance the shopping experience across devices.",
-      image: kassa,
-      tags: ["PHP", "MYSQL", "Wordpress", "HTML","CSS3"],
-      github: "#",
-      webapp: "https://kassacakes.com/shop/",
-    },
+    
   
     {
-      id: 14,
+      id: 16,
       title: "HRTech Newsroom – Blog Website",
       description:
         "Developed a technology-focused blog platform using WordPress, PHP, and HTML. Built a customizable and fully responsive website for publishing articles, tutorials, and industry updates. Implemented dynamic content management features to enable seamless addition, editing, and organization of posts",
@@ -418,7 +471,7 @@ export const SkillsInfo = [
       webapp: "https://www.hrtechnewsroom.com/",
     },
       {
-      id: 15,
+      id: 17,
       title: "Github Profile Detective",
       description:
         "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
@@ -428,7 +481,7 @@ export const SkillsInfo = [
       webapp: "https://github-detective-profile.netlify.app/",
     },
     {
-      id: 16,
+      id: 18,
       title: "Weather Forecast App",
       description:
         "Developed a responsive weather application using React and Tailwind CSS that allows users to check real-time weather conditions for any location. Integrated Weather APIs to fetch accurate data including temperature, humidity, wind speed, and forecasts. Designed a clean and user-friendly interface to provide an intuitive experience across all devices.",
@@ -437,16 +490,7 @@ export const SkillsInfo = [
       github: "#",
       webapp: "https://elegant-nasturtium-efa6eb.netlify.app/",
     },
-    //   {
-    //   id: 10,
-    //   title: "MBBSJ College Website",
-    //   description:
-    //     "Developed a fully responsive college website that provides detailed information about courses, faculty, events, and facilities. Integrated an online admission system allowing students to apply directly through the website, streamlining the enrollment process.",
-    //   image: mbbsj,
-    //   tags: ["HTML", "PHP", "Wordpress", "CSS"],
-    //   github: "#",
-    //   webapp: "https://mbbsjc.com/",
-    // },
+   
   
   
   ];  
