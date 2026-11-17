@@ -92,7 +92,7 @@ import brandportal from './assets/work_logo/Brand-Portal.png';
 import lionreach from './assets/work_logo/Lion-Reach-Media.png';
 import cio from './assets/work_logo/cio.png';
 import revtech from './assets/work_logo/revtech.png';
-import obsidian  from './assets/work_logo/obsidian.png';
+import obsidian  from './assets/work_logo/Obsidian.png';
 
 
 
