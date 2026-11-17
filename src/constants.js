@@ -92,6 +92,8 @@ import brandportal from './assets/work_logo/Brand-Portal.png';
 import lionreach from './assets/work_logo/Lion-Reach-Media.png';
 import cio from './assets/work_logo/cio.png';
 import revtech from './assets/work_logo/revtech.png';
+import obsidian  from './assets/work_logo/obsidian.png';
+
 
 
 
@@ -301,10 +303,10 @@ export const SkillsInfo = [
       title: "AI-Powered Project Management & Employee Performance System",
       description:
         "Developed an AI-powered Project Management and Employee Performance Platform that enables project assignment, real-time team collaboration, WhatsApp-like messaging, automated performance evaluation, AI-assisted employee support, and productivity tracking through a unified dashboard. The system helps organizations improve workflow efficiency, communication, and data-driven performance management.",
-      image:projectflow,
+      image:obsidian,
       tags: [ "JavaScript", "React", "MYSQL","Node JS","Express JS","JWT Authentication","Socket.IO","OpenAI/Custom AI Agent APIs"],
       github: "https://github.com/Sam-gore2000/Project-Management-Software.git",
-      webapp: "https://obsidian.int.lionreachlabs.cloud/home",
+      webapp: "https://obsidian.int.lionreachlabs.cloud/",
     },
     {
       id: 1,
