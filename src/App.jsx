@@ -14,6 +14,9 @@ import Cursor from "./components/ui/Cursor";
 import ScrollProgress from "./components/ui/ScrollProgress";
 import Background from "./components/ui/Background";
 import Marquee from "./components/ui/Marquee";
+import AgentHUD from "./components/ui/AgentHUD";
+import AgentSwarm from "./components/ui/AgentSwarm";
+import { buildStore } from "./lib/buildStore";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -32,6 +35,8 @@ const App = () => {
 
   useEffect(() => {
     document.body.style.overflow = loading ? "hidden" : "";
+    // The page only starts "building itself" once the preloader curtain is lifting.
+    buildStore.setReady(!loading);
   }, [loading]);
 
   return (
@@ -39,6 +44,8 @@ const App = () => {
       <AnimatePresence>{loading && <Preloader key="pre" onDone={done} />}</AnimatePresence>
       <Cursor />
       <ScrollProgress />
+     
+      <AgentSwarm />
       <Background />
       <Navbar />
       <main className="overflow-x-clip">

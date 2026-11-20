@@ -4,6 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { FiExternalLink, FiGithub, FiX, FiArrowUpRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { projects } from "../../constants";
 import SectionTitle from "../ui/SectionTitle";
+import Blueprint from "../ui/Blueprint";
 import { tidy } from "../../lib/text";
 
 const has = (p, re) => p.tags.some((t) => re.test(t));
@@ -114,8 +115,9 @@ const Work = () => {
               style={{ perspective: 1200 }}
               className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {pageItems.map((project) => (
+              {pageItems.map((project, pi) => (
                 <motion.div key={project.id} custom={dir} variants={cardV}>
+                  <Blueprint name={`Project / ${project.title.trim()}`} delay={(pi % 3) * 0.14} build={1.15} className="h-full">
                   <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1100} scale={1.02} glareEnable glareMaxOpacity={0.12} glareColor="#2de2e6" glareBorderRadius="1.5rem" className="h-full">
                     <button
                       onClick={() => setSelected(project)}
@@ -165,6 +167,7 @@ const Work = () => {
                       </div>
                     </button>
                   </Tilt>
+                  </Blueprint>
                 </motion.div>
               ))}
             </motion.div>

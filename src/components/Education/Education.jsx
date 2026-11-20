@@ -6,6 +6,7 @@ import SectionTitle from "../ui/SectionTitle";
 import TimelineLine from "../ui/TimelineLine";
 import Counter from "../ui/Counter";
 import useSpotlight from "../ui/useSpotlight";
+import Blueprint, { useRevealed } from "../ui/Blueprint";
 import { tidy } from "../../lib/text";
 
 // "7.75 CGPA" -> 77.5 %, "85%" -> 85 %
@@ -16,6 +17,7 @@ const parseGrade = (grade) => {
 };
 
 const GradeRing = ({ grade }) => {
+  const revealed = useRevealed();
   const { value, pct, label } = parseGrade(grade);
   const r = 34;
   const c = 2 * Math.PI * r;
@@ -34,8 +36,7 @@ const GradeRing = ({ grade }) => {
           cx="40" cy="40" r={r} fill="none" stroke="url(#ring)" strokeWidth="6" strokeLinecap="round"
           strokeDasharray={c}
           initial={{ strokeDashoffset: c }}
-          whileInView={{ strokeDashoffset: c * (1 - pct / 100) }}
-          viewport={{ once: true }}
+          animate={revealed ? { strokeDashoffset: c * (1 - pct / 100) } : {}}
           transition={{ duration: 1.6, ease: "easeOut", delay: 0.3 }}
         />
       </svg>
@@ -78,16 +79,9 @@ const Education = () => {
                 </motion.div>
                 </div>
 
-                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1200} scale={1.015} className={`w-full md:w-[calc(50%-3.5rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}>
-                <motion.article
-                  initial={{ opacity: 0, x: left ? -80 : 80, rotateY: left ? 12 : -12 }}
-                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  onMouseMove={spot}
-                  style={{ transformPerspective: 1000 }}
-                  className="glass glow-border h-full w-full rounded-3xl p-6 sm:p-8"
-                >
+                <Blueprint name={`Card / ${edu.degree}`} build={1.2} className={`w-full md:w-[calc(50%-3.5rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}>
+                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1200} scale={1.015} className="h-full">
+                <article onMouseMove={spot} className="glass glow-border h-full w-full rounded-3xl p-6 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="font-display text-lg font-semibold text-white sm:text-xl">{edu.degree}</h3>
@@ -97,8 +91,9 @@ const Education = () => {
                     <GradeRing grade={edu.grade} />
                   </div>
                   <p className="mt-5 text-sm leading-relaxed text-white/75">{tidy(edu.desc)}</p>
-                </motion.article>
+                </article>
                 </Tilt>
+                </Blueprint>
               </div>
             );
           })}

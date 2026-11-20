@@ -5,6 +5,7 @@ import { experiences } from "../../constants";
 import SectionTitle from "../ui/SectionTitle";
 import TimelineLine from "../ui/TimelineLine";
 import useSpotlight from "../ui/useSpotlight";
+import Blueprint from "../ui/Blueprint";
 import { tidy } from "../../lib/text";
 
 const Experience = () => {
@@ -39,16 +40,9 @@ const Experience = () => {
                 </motion.div>
                 </div>
 
-                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1200} scale={1.015} className={`w-full md:w-[calc(50%-3.5rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}>
-                <motion.article
-                  initial={{ opacity: 0, x: left ? -80 : 80, rotateY: left ? 12 : -12 }}
-                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  onMouseMove={spot}
-                  style={{ transformPerspective: 1000 }}
-                  className="glass glow-border h-full w-full rounded-3xl p-6 sm:p-8"
-                >
+                <Blueprint name={`Card / ${exp.role}`} build={1.2} className={`w-full md:w-[calc(50%-3.5rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}>
+                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1200} scale={1.015} className="h-full">
+                <article onMouseMove={spot} className="glass glow-border h-full w-full rounded-3xl p-6 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">{exp.role}</h3>
@@ -63,20 +57,14 @@ const Experience = () => {
 
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {exp.skills.map((s, k) => (
-                      <motion.li
-                        key={k}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + k * 0.04 }}
-                        className="rounded-full border border-violet/40 bg-violet/15 px-3 py-1 text-xs text-white/90"
-                      >
+                      <li key={k} className="rounded-full border border-violet/40 bg-violet/15 px-3 py-1 text-xs text-white/90">
                         {s.trim()}
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
-                </motion.article>
+                </article>
                 </Tilt>
+                </Blueprint>
               </div>
             );
           })}

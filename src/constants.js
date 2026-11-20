@@ -93,6 +93,10 @@ import lionreach from './assets/work_logo/Lion-Reach-Media.png';
 import cio from './assets/work_logo/cio.png';
 import revtech from './assets/work_logo/revtech.png';
 import obsidian  from './assets/work_logo/Obsidian.png';
+import Techpulse  from './assets/work_logo/TechPulse.png';
+import FinTech  from './assets/work_logo/FinTech.png';
+
+
 
 
 
@@ -197,6 +201,8 @@ export const SkillsInfo = [
       date: "May 2024 - Present",
       desc: "Developed and maintained CRM panels and internal company tools using PHP, MySQL, JavaScript, React, HTML, and CSS, improving operational efficiency.Designed and optimized WordPress websites for clients, ensuring high performance, responsiveness, and scalability.Created automation tools that significantly boosted productivity within the company.Built interactive web applications and integrated APIs to enhance functionality and user experience.",
       skills: [
+        "C#",
+        "ASP.NET CORE",
         "HTML",
         "CSS",
         "JavaScript",
@@ -209,7 +215,9 @@ export const SkillsInfo = [
         "PHP",
         "Redux",
         " Node Js",
-        "Wordpress"
+        "Wordpress",
+
+
       ],
     },
     {
@@ -227,7 +235,9 @@ export const SkillsInfo = [
         "MYSQL",
         "PHP",
         "Wordpress",
-        "Tailwind"
+        "Tailwind",
+        "C#",
+        "ASP.NET MVC"
         
       ],
     },
@@ -304,19 +314,19 @@ export const SkillsInfo = [
       description:
         "Developed an AI-powered Project Management and Employee Performance Platform that enables project assignment, real-time team collaboration, WhatsApp-like messaging, automated performance evaluation, AI-assisted employee support, and productivity tracking through a unified dashboard. The system helps organizations improve workflow efficiency, communication, and data-driven performance management.",
       image:obsidian,
-      tags: [ "JavaScript", "React", "MYSQL","Node JS","Express JS","JWT Authentication","Socket.IO","OpenAI/Custom AI Agent APIs"],
+      tags: [ "JavaScript", "React.Js", "MSSQL","C#","ASP.NET CORE WEB API","JWT Authentication","Socket.IO","OpenAI/Custom AI Agent APIs","Tailwind CSS"],
       github: "https://github.com/Sam-gore2000/Project-Management-Software.git",
       webapp: "https://obsidian.int.lionreachlabs.cloud/",
     },
     {
       id: 1,
-      title: "MSFT Automation Tool",
+      title: "LANDERX Automation Tool",
       description:
         " Developed an application that automatically generates Microsoft landing pages using web scraping techniques. The tool extracts relevant data and builds fully functional landing pages within seconds, significantly reducing manual effort and development time.",
       image:msft,
-      tags: ["HTML", "CSS", "JavaScript", "PHP", "MYSQL","Tailwind CSS"],
+      tags: [ "JavaScript", "React.Js", "MSSQL","C#","ASP.NET CORE WEB API","JWT Authentication","OpenAI/Custom AI Agent APIs","Tailwind CSS"],
       github: "#",
-      webapp: "https://msft.martechquest.com/login.php",
+      webapp: "https://landerx.ext.lionreachlabs.cloud/login",
     },
     {
       id: 2,
@@ -324,9 +334,9 @@ export const SkillsInfo = [
       description:
         "Developed a comprehensive HRM solution with user and admin panels to efficiently manage employee data, leave requests, attendance records, salary details, holidays, and birthdays. The software streamlined HR processes by providing a centralized platform, improving organizational efficiency and enhancing employee satisfaction.",
       image: hrm,
-      tags: ["HTML", "CSS", "Javascript", "React JS", "Express JS", "Node JS","Tailwind CSS","MYSQL","Prisma"],
+      tags: ["JavaScript", "React.Js", "MSSQL","C#","ASP.NET CORE WEB API","JWT Authentication","OpenAI/Custom AI Agent APIs","Tailwind CSS"],
       github: "#",
-      webapp: "https://hrm.lionreach.com/LR-HRM/index.php",
+      webapp: "https://int.verve-hrm.lionreachlabs.cloud/",
     },
     {
       id: 3,
@@ -344,7 +354,7 @@ export const SkillsInfo = [
       description:
         "CampaignIQ is a comprehensive SaaS platform developed to streamline lead delivery, campaign tracking, and client collaboration for lead generation companies. The platform provides complete visibility into campaign performance, lead allocation, acceptance status, and communication between internal teams and clients.Instead of managing campaigns through spreadsheets, emails, and multiple communication channels, CampaignIQ centralizes the entire workflow into a single dashboard where Sales Teams, Client Success Managers, Operations Teams, and Clients can collaborate in real time.",
       image: campagin,
-      tags: ["Node.js", "Express.js", "MongoDB (Mongoose)", "BullMQ", "JWT authentication", "Nodemailer","React", "Vite", "Tailwind CSS", "React Query"," Framer Motion","Docker","Role-Based Access Control","Email Notifications","Real-Time Chat"],
+      tags: ["JavaScript", "React.Js", "MSSQL","C#","ASP.NET CORE WEB API","JWT Authentication","OpenAI/Custom AI Agent APIs","Tailwind CSS"],
       github: "#",
       webapp: "https://campaigniq.ext.lionreachlabs.cloud/login",
     },
@@ -452,25 +462,25 @@ export const SkillsInfo = [
     },
       {
       id: 15,
-      title: "Tech Blog Website",
+      title: "Techpulse Website",
       description:
-        "Developed a technology-focused blog website using WordPress, PHP, and HTML. Created a customizable and responsive platform for publishing articles, tutorials, and tech updates. Implemented dynamic content management features allowing easy addition, editing, and organization of posts. Designed a user-friendly interface to enhance readability and engagement for visitors across devices.",
-      image: tech,
-      tags: ["PHP", "MYSQL", "HTML", "Wordpress"],
+        "Technology news and insights publication covering enterprise and emerging tech topics. Built as a MERN application with a responsive UI, an admin-managed content backend and SEO-ready page structure.",
+      image: Techpulse,
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "SEO","Motion Graphics"],
       github: "#",
-      webapp: "https://www.techpulseinsider.com/",
+      webapp: "https://int.techpulse.lionreachlabs.cloud/",
     },
     
   
     {
       id: 16,
-      title: "HRTech Newsroom – Blog Website",
+      title: "Fintech Newsroom – Blog Website",
       description:
-        "Developed a technology-focused blog platform using WordPress, PHP, and HTML. Built a customizable and fully responsive website for publishing articles, tutorials, and industry updates. Implemented dynamic content management features to enable seamless addition, editing, and organization of posts",
-      image: hr,
-      tags: ["HTML", "CSS", "Wordpress", "PHP","MYSQL"],
+        "B2B news and insights platform for the financial technology industry, covering payments, digital banking and fintech trends. Developed on the MERN stack with a fast, responsive reading experience, structured content categories and SEO optimisation to grow organic reach.",
+      image: FinTech,
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "SEO","Motion Graphics"],
       github: "#",
-      webapp: "https://www.hrtechnewsroom.com/",
+      webapp: "https://int.fintech.lionreachlabs.cloud/",
     },
       {
       id: 17,

@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import SectionTitle from "../ui/SectionTitle";
 import Magnetic from "../ui/Magnetic";
 import Confetti from "../ui/Confetti";
+import Blueprint from "../ui/Blueprint";
 
 const toastOpts = { position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, theme: "dark" };
 
@@ -52,13 +53,8 @@ const Contact = () => {
         <SectionTitle title="Let's Work Together" sub="I'd love to hear from you - reach out for any opportunities or questions!" />
 
         <div className="grid items-stretch gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="glass relative flex flex-col justify-between overflow-hidden rounded-3xl p-8"
-          >
+          <Blueprint name="Card / Connect" build={1.2} className="h-full">
+          <div className="glass relative flex h-full flex-col justify-between overflow-hidden rounded-3xl p-8">
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-violet to-pink opacity-40 blur-3xl animate-aurora" />
             <div className="relative">
               <h3 className="font-display text-2xl font-semibold text-white">Connect With Me <span className="inline-block animate-float">🚀</span></h3>
@@ -90,17 +86,11 @@ const Contact = () => {
                 </Magnetic>
               </li>
             </ul>
-          </motion.div>
+          </div>
+          </Blueprint>
 
-          <motion.form
-            ref={form}
-            onSubmit={sendEmail}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="glass space-y-4 rounded-3xl p-8"
-          >
+          <Blueprint name="Form / Contact" delay={0.2} build={1.4} className="h-full">
+          <form ref={form} onSubmit={sendEmail} className="glass h-full space-y-4 rounded-3xl p-8">
             {fields.map((f) => (
               <div key={f.name} className="relative">
                 <input id={f.name} name={f.name} type={f.type} placeholder={f.label} required className={inputCls} />
@@ -123,7 +113,8 @@ const Contact = () => {
               {sending ? "Sending..." : "Send message"}
             </motion.button>
             </div>
-          </motion.form>
+          </form>
+          </Blueprint>
         </div>
       </div>
     </section>
